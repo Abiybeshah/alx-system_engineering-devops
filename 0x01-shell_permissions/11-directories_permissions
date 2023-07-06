@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod -R 711 i
+chmod -R 766 $(pwd)
