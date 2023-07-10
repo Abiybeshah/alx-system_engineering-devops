@@ -1,2 +1,2 @@
 #!/bin/bash
-touch ls_cwd_content > $((echo ls -al))
+echo $(ls -al) > ls_cwd_content
