@@ -1,3 +1,2 @@
-i #!/bin/bash
-echo hello $(whoami) i #!/bin/bash
+#!/bin/bash
 echo hello $(whoami)
