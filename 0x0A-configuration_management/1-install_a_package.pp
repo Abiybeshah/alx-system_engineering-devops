@@ -1,4 +1,4 @@
-# installl flask with puppet
+#install flask with puppet
 
 package { 'python3.8':
   ensure   => '3.8.10',
