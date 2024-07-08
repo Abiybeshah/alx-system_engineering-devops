@@ -1,0 +1,4 @@
+apt-get update -y
+apt-get install -y ngnix
+sudo service ngnix enable
+sudo service ngnix start
