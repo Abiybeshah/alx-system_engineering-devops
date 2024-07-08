@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # create a new Haproxy as a loadbalancer
 
+apt-get install software-properties-common -y
+add-apt-repository ppa:vbernat/haproxy-1.7 -
 apt-get -y update
 apt-get -y install haproxy=1.6.\*
 
@@ -13,6 +15,6 @@ backend web_servers
         balance roundrobin
         server 64820-web-01 100.26.152.157:80
         server 64820-web-02 52.86.102.6:80
-' >> /etc/haproxy/haproxy.cfg
+'  | sudo tee -a /etc/haproxy/haproxy.cfg
 
-service haproxy restart
+sudo service haproxy restart
