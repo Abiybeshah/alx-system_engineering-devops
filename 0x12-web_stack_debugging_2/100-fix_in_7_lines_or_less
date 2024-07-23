@@ -1,4 +1,8 @@
 #!/bin/usr/env bash
+# 7 lines or less 
+
+
+#!/bin/usr/env bash
 # Fix this container so that
 # Nginx is running as the nginx user.
 
