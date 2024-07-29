@@ -4,18 +4,25 @@
 import requests
 import sys
 
-if __name__=="__main__"
-    url= "https://jsonplaceholder.typicode.com/"
-    employee_id=sys.argv[1]
-     user = requests.get(url + "users/{}".format(employee_id)).json()
+if __name__ == "__main__":
 
-     # Get the to-do list for the employee using the provided employee ID
-    params = {"userId": employee_id}
-    todos = requests.get(url + "todos", params).json()
+    userId = sys.argv[1]
+    user = requests.get("https://jsonplaceholder.typicode.com/users/{}"
+                        .format(userId))
 
-    completed = [t.get("title") for t in todos if t.get("completed") is True]
+    name = user.json().get('name')
 
-    print("Employee {} is done with tasks({}/{}):".format(
-    user.get("name"), len(completed), len(todos)))
+    todos = requests.get('https://jsonplaceholder.typicode.com/todos')
+    totalTasks = 0
+    completed = 0
 
-    [print("\t {}".format(complete)) for complete in completed]
+    for task in todos.json():
+        if task.get('userId') == int(userId):
+            totalTasks += 1
+            if task.get('completed'):
+                completed += 1
+
+    print('Employee {} is done with tasks({}/{}):'
+          .format(name, completed, totalTasks))
+    print('\n'.join(["\t " + task.get('title') for task in todos.json()
+          if task.get('userId') == int(userId) and task.get('completed')]))
