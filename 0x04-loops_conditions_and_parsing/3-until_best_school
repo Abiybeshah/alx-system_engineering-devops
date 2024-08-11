@@ -6,4 +6,5 @@ count=0
 until [ $count -lt 10 ]
 do
 	echo "Best Scool"
+	(( count++ ))
 done
