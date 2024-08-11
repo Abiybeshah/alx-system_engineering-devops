@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
-# displays 1 through 20 am prints values
+# display the numbers 1 to 20
+# and prints corresponding values
 
-count=1
-
-while [ $case -lt 20 ]
+while [ $count -lt 20 ]
 do
 	echo "$count"
 	case $count in
