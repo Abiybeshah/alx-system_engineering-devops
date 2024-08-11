@@ -2,7 +2,7 @@
 # display the numbers 1 to 20
 # and prints corresponding values
 
-count=0
+count=1
 
 while [ $count -lt 20 ]
 do
